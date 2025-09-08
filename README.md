@@ -1,6 +1,6 @@
-# Artificial-Intelligence---Attention-based-NLP
+# Artificial-Intelligence---Attention-Based-NLP
 
-# 📌 Overview
+📌 Overview
 
 This project implements a basic but functional Question-Answering (QA) model using:
 
