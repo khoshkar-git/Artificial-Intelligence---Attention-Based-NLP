@@ -34,3 +34,17 @@ answers = [
 
 # Add start and end tokens to answers
 answers = ["<start> " + answer + " <end>" for answer in answers]
+
+# Create a TextVectorization layer for questions - Vectorization used for tokenization and integer encoding of text data
+vectorize_question = keras.layers.TextVectorization(standardize=None, split="whitespace", output_mode="int", output_sequence_length=None, pad_to_max_tokens=False, )
+# Adapt the vectorization layer to the questions dataset
+vectorize_question.adapt(questions)
+# Get the vocabulary size for questions
+vocab_size_questions = vectorize_question.vocabulary_size()
+
+# Create a TextVectorization layer for answers - Vectorization used for tokenization and integer encoding of text data
+vectorize_answer = keras.layers.TextVectorization(standardize=None, split="whitespace", output_mode="int", output_sequence_length=None, pad_to_max_tokens=False)
+# Adapt the vectorization layer to the answers dataset
+vectorize_answer.adapt(answers)
+# Get the vocabulary size for answers
+vocab_size_answers = vectorize_answer.vocabulary_size()
